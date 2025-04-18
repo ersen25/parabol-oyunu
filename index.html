@@ -1,574 +1,403 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html  >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İkinci Dereceden Denklem Oyunu</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f8fa;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        .container {
-            width: 90%;
-            max-width: 700px;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .game-container {
-            margin-top: 20px;
-        }
-        .equation {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #ecf0f1;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .stage {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eaeaea;
-        }
-        .stage-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #3498db;
-        }
-        .inputs {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        input {
-            width: 80px;
-            height: 40px;
-            text-align: center;
-            font-size: 18px;
-            border: 2px solid #3498db;
-            border-radius: 5px;
-            padding: 5px;
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 15px;
-        }
-        button:hover {
-            background-color: #2980b9;
-        }
-        .message {
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-            min-height: 20px;
-        }
-        .correct {
-            color: #27ae60;
-            background-color: #e8f8f2;
-        }
-        .incorrect {
-            color: #e74c3c;
-            background-color: #faeceb;
-        }
-        .score {
-            text-align: center;
-            font-size: 22px;
-            margin: 20px 0;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        .game-over {
-            text-align: center;
-            font-size: 24px;
-            margin-top: 30px;
-            color: #e74c3c;
-            font-weight: bold;
-        }
-        .next-btn {
-            margin-top: 15px;
-            background-color: #2ecc71;
-        }
-        .next-btn:hover {
-            background-color: #27ae60;
-        }
-        .new-game-btn {
-            margin-top: 20px;
-            background-color: #e67e22;
-        }
-        .new-game-btn:hover {
-            background-color: #d35400;
-        }
-        .graph {
-            width: 100%;
-            height: 250px;
-            margin: 20px 0;
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .question {
-            margin: 15px 0;
-            font-size: 16px;
-        }
-        .choice {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 15px 0;
-        }
-        .choice-btn {
-            width: auto;
-            padding: 10px 20px;
-        }
-        .hidden {
-            display: none;
-        }
-        .coefficient {
-            font-weight: bold;
-            color: #2980b9;
-        }
-    </style>
+  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Home</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/parallax/jarallax.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=FNYu6b"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=FNYu6b" type="text/css">
+
+  
+  
+  
 </head>
 <body>
-    <div class="container">
-        <h1>İkinci Dereceden Denklem Oyunu</h1>
-        
-        <div class="score">Puan: <span id="scoreValue">0</span></div>
-        
-        <!-- Oyun Containeri -->
-        <div class="game-container" id="gameContainer">
-            <div class="equation" id="equation">
-                İkinci dereceden denklem yükleniyor...
-            </div>
-            
-            <!-- Aşama 1: Tepe Noktası -->
-            <div class="stage" id="stage1">
-                <div class="stage-title">Aşama 1: Tepe Noktasını Bulun</div>
-                <div class="question">Yukarıdaki ikinci dereceden denklemin tepe noktasının koordinatlarını bulun:</div>
-                <div class="inputs">
-                    <div>
-                        <input type="number" id="vertexX" placeholder="x" step="0.1">
-                        <div>Tepe X</div>
-                    </div>
-                    <div>
-                        <input type="number" id="vertexY" placeholder="y" step="0.1">
-                        <div>Tepe Y</div>
-                    </div>
+  
+  <section data-bs-version="5.1" class="menu menu4 cid-uIKwYVNlJ4" once="menu" id="menu04-3">
+	
+
+	<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+		<div class="container">
+			<div class="navbar-brand">
+				<span class="navbar-logo">
+					<a href="https://mobiri.se">
+						<img src="assets/images/logo2.png" alt="Mobirise Website Builder" style="height: 4rem;">
+					</a>
+				</span>
+				
+			</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
+						<a class="nav-link link text-black display-4" href="https://mobiri.se">ANA SAYFA</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link link text-black show display-4" href="https://mobiri.se" aria-expanded="false">İÇERİKLER</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link link text-black display-4" href="https://mobiri.se"></a>
+					</li></ul>
+				
+				<div class="navbar-buttons mbr-section-btn">
+					<a class="btn btn-primary display-4" href="https://mobiri.se">Get Started!</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+</section>
+
+<section data-bs-version="5.1" class="gallery1 mbr-gallery cid-uIKxjbmAvW mbr-parallax-background" id="gallery01-4">
+    
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(247, 247, 247);">
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mb-5">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center m-0 display-2"><strong>Gallery with Popup Slider</strong></h3>
+                    <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7">Images with Captions</h4>
                 </div>
-                <button id="checkVertexBtn">Kontrol Et</button>
-                <div class="message" id="vertexMessage"></div>
-            </div>
-            
-            <!-- Aşama 2: Noktanın Denklemi Sağlaması -->
-            <div class="stage hidden" id="stage2">
-                <div class="stage-title">Aşama 2: Denklemi Kontrol Edin</div>
-                <div class="question" id="pointQuestion">
-                    Bu nokta denklemi sağlıyor mu?
-                </div>
-                <div class="choice">
-                    <button class="choice-btn" id="yesBtn">Evet, Sağlıyor</button>
-                    <button class="choice-btn" id="noBtn">Hayır, Sağlamıyor</button>
-                </div>
-                <div class="message" id="pointMessage"></div>
-            </div>
-            
-            <!-- Aşama 3: Parabol Yönü -->
-            <div class="stage hidden" id="stage3">
-                <div class="stage-title">Aşama 3: Parabolün Yönünü Belirleyin</div>
-                <div class="question">Bu ikinci dereceden fonksiyonun kolları hangi yöne bakıyor?</div>
-                <div class="choice">
-                    <button class="choice-btn" id="upBtn">Yukarı</button>
-                    <button class="choice-btn" id="downBtn">Aşağı</button>
-                </div>
-                <div class="message" id="directionMessage"></div>
-            </div>
-            
-            <div class="graph" id="graph">
-                <!-- Canvas için yer -->
             </div>
         </div>
         
-        <div class="game-over hidden" id="gameOver">Oyun Bitti!</div>
-        
-        <button class="new-game-btn hidden" id="newGameBtn">Yeni Oyun</button>
+        <div class="row mbr-gallery">
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uIKAj5MmhM-modal" data-bs-target="#uIKAj5MmhM-modal">
+                    <img class="w-100" src="assets/images/gallery01.jpg" alt="Mobirise Website Builder" data-slide-to="0" data-bs-slide-to="0" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
+                    Image Caption and <a href="#" class="text-primary">Link</a>
+                </h6>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uIKAj5MmhM-modal" data-bs-target="#uIKAj5MmhM-modal">
+                    <img class="w-100" src="assets/images/gallery02.jpg" alt="Mobirise Website Builder" data-slide-to="1" data-bs-slide-to="1" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
+                    Image Caption and <a href="#" class="text-primary">Link</a>
+                </h6>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uIKAj5MmhM-modal" data-bs-target="#uIKAj5MmhM-modal">
+                    <img class="w-100" src="assets/images/gallery03.jpg" alt="Mobirise Website Builder" data-slide-to="2" data-bs-slide-to="2" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
+                    Image Caption and <a href="#" class="text-primary">Link</a>
+                </h6>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uIKAj5MmhM-modal" data-bs-target="#uIKAj5MmhM-modal">
+                    <img class="w-100" src="assets/images/gallery04.jpg" alt="Mobirise Website Builder" data-slide-to="3" data-bs-slide-to="3" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
+                    Image Caption and <a href="#" class="text-primary">Link</a>
+                </h6>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uIKAj5MmhM-modal" data-bs-target="#uIKAj5MmhM-modal">
+                    <img class="w-100" src="assets/images/gallery10.jpg" alt="Mobirise Website Builder" data-slide-to="4" data-bs-slide-to="4" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
+                    Image Caption and <a href="#" class="text-primary">Link</a>
+                </h6>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uIKAj5MmhM-modal" data-bs-target="#uIKAj5MmhM-modal">
+                    <img class="w-100" src="assets/images/gallery05.jpg" alt="Mobirise Website Builder" data-slide-to="5" data-bs-slide-to="5" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
+                    Image Caption and <a href="#" class="text-primary">Link</a>
+                </h6>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uIKAj5MmhM-modal" data-bs-target="#uIKAj5MmhM-modal">
+                    <img class="w-100" src="assets/images/gallery06.jpg" alt="Mobirise Website Builder" data-slide-to="6" data-bs-slide-to="6" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
+                    Image Caption and <a href="#" class="text-primary">Link</a>
+                </h6>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image">
+                <div class="item-wrapper mb-3" data-toggle="modal" data-bs-toggle="modal" data-target="#uIKAj5MmhM-modal" data-bs-target="#uIKAj5MmhM-modal">
+                    <img class="w-100" src="assets/images/gallery07.jpg" alt="Mobirise Website Builder" data-slide-to="7" data-bs-slide-to="7" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7">
+                    Image Caption and <a href="#" class="text-primary">Link</a>
+                </h6>
+            </div>
+        </div>
+
+        <div class="modal mbr-slider" tabindex="-1" role="dialog" aria-hidden="true" id="uIKAj5MmhM-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="carousel slide" data-pause="false" data-bs-pause="false" id="lb-uIKAj5MmhM" data-interval="5000" data-bs-interval="5000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="assets/images/gallery01.jpg" alt="Mobirise Website Builder">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="assets/images/gallery02.jpg" alt="Mobirise Website Builder">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="assets/images/gallery03.jpg" alt="Mobirise Website Builder">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="assets/images/gallery04.jpg" alt="Mobirise Website Builder">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="assets/images/gallery10.jpg" alt="Mobirise Website Builder">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="assets/images/gallery05.jpg" alt="Mobirise Website Builder">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="assets/images/gallery06.jpg" alt="Mobirise Website Builder">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="assets/images/gallery07.jpg" alt="Mobirise Website Builder">
+                                </div>
+                            </div>
+                            <ol class="carousel-indicators">
+                                <li data-slide-to="0" data-bs-slide-to="0" class="active" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM"></li>
+                                <li data-slide-to="1" data-bs-slide-to="1" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM"></li>
+                                <li data-slide-to="2" data-bs-slide-to="2" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM"></li>
+                                <li data-slide-to="3" data-bs-slide-to="3" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM"></li>
+                                <li data-slide-to="4" data-bs-slide-to="4" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM"></li>
+                                <li data-slide-to="5" data-bs-slide-to="5" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM"></li>
+                                <li data-slide-to="6" data-bs-slide-to="6" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM"></li>
+                                <li data-slide-to="7" data-bs-slide-to="7" data-target="#lb-uIKAj5MmhM" data-bs-target="#lb-uIKAj5MmhM"></li>
+                            </ol>
+                            <a role="button" href="" class="close" data-dismiss="modal" data-bs-dismiss="modal" aria-label="Close">
+                            </a>
+                            <a class="carousel-control-prev carousel-control" role="button" data-slide="prev" data-bs-slide="prev" href="#lb-uIKAj5MmhM">
+                                <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
+                                <span class="sr-only visually-hidden">Previous</span>
+                            </a>
+                            <a class="carousel-control-next carousel-control" role="button" data-slide="next" data-bs-slide="next" href="#lb-uIKAj5MmhM">
+                                <span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
+                                <span class="sr-only visually-hidden">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+
+<section data-bs-version="5.1" class="countdown2 cid-uIKxlvIfv2" id="countdown2-5">
+  
+
+  
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h4 class="mbr-section-title mb-5 align-center mbr-fonts-style display-2">
+          <strong>Coming Soon</strong>
+        </h4>
+        <h4 class="mbr-section-subtitle mb-5 align-center mbr-fonts-style display-7">
+          Use this block as a countdown for your project if it's not ready yet.
+          Set the date in Block Parameters.
+        </h4>
+        <div class="countdown-cont align-center mb-5 display-2">
+          <div title="Days" class="daysCountdown col-xs-3 col-sm-3 col-md-3 display-4"></div>
+          <div title="Hours" class="hoursCountdown col-xs-3 col-sm-3 col-md-3 display-4">
+          </div>
+          <div title="Minutes" class="minutesCountdown col-xs-3 col-sm-3 col-md-3 display-4">
+          </div>
+          <div title="Seconds" class="secondsCountdown col-xs-3 col-sm-3 col-md-3 display-4">
+          </div>
+          <div class="countdown" data-due-date="2025/01/01"></div>
+        </div>
+        <p class="mbr-text mb-5 align-center mbr-fonts-style display-7">
+          Subscribe to find out when we launch.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+        <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="ZU6sH6Kjd5bCAsL6aJjwc0gm17UIvnbMMwtdhLs3lvtsO+gLL5nocf/d2wetrE6jN21WjmhlDj6xSaR13GnMWjyjbCKx/OpVt6N07LQs9cody6MtoeYjpP/3JEdKChTk">
+          <div class="row">
+            <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+            <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+              Oops...! some problem!
+            </div>
+          </div>
+          <div class="dragArea row">
+            <div data-for="email" class="col-lg-6 col-md-6 col-sm-12 form-group">
+              <input type="email" name="email" placeholder="test@email.com" data-form-field="email" class="form-control display-7" value="" id="email-countdown2-5">
+            </div>
+            <div class="col-auto mbr-section-btn">
+              <button type="submit" class="w-100 w-100 w-100 w-100 w-100 w-100 btn btn-secondary display-7">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="list07 cid-uIKxpDZQ01" id="list07-6">
     
-    <script>
-        // Oyun değişkenleri
-        let score = 0;
-        let currentEquation = {};
-        
-        // HTML elementleri
-        const equationElement = document.getElementById('equation');
-        const vertexXInput = document.getElementById('vertexX');
-        const vertexYInput = document.getElementById('vertexY');
-        const checkVertexBtn = document.getElementById('checkVertexBtn');
-        const vertexMessageElement = document.getElementById('vertexMessage');
-        const scoreElement = document.getElementById('scoreValue');
-        const stage1Element = document.getElementById('stage1');
-        const stage2Element = document.getElementById('stage2');
-        const stage3Element = document.getElementById('stage3');
-        const pointQuestionElement = document.getElementById('pointQuestion');
-        const yesBtnElement = document.getElementById('yesBtn');
-        const noBtnElement = document.getElementById('noBtn');
-        const pointMessageElement = document.getElementById('pointMessage');
-        const upBtnElement = document.getElementById('upBtn');
-        const downBtnElement = document.getElementById('downBtn');
-        const directionMessageElement = document.getElementById('directionMessage');
-        const gameOverElement = document.getElementById('gameOver');
-        const newGameBtnElement = document.getElementById('newGameBtn');
-        const graphElement = document.getElementById('graph');
-        
-        // İkinci dereceden denklem oluştur (ax² + bx + c formatında)
-        function generateQuadraticEquation() {
-            // a değeri sıfırdan farklı olmalı (0 olursa ikinci dereceden denklem olmaz)
-            let a = 0;
-            while (a === 0) {
-                a = Math.floor(Math.random() * 7) - 3; // -3 ile 3 arasında, 0 hariç
-            }
-            
-            const b = Math.floor(Math.random() * 11) - 5; // -5 ile 5 arasında
-            const c = Math.floor(Math.random() * 11) - 5; // -5 ile 5 arasında
-            
-            // Tepe noktası hesaplama: x = -b/(2a), y = f(x) = c - b²/(4a)
-            const vertexX = -b / (2 * a);
-            const vertexY = c - (b * b) / (4 * a);
-            
-            // Kontrol edilecek nokta
-            let testX, testY;
-            
-            // %50 ihtimalle denklemi sağlayan bir nokta oluştur
-            const satisfiesEquation = Math.random() > 0.5;
-            
-            if (satisfiesEquation) {
-                // Denklemi sağlayan rastgele bir x değeri seç
-                testX = Math.floor(Math.random() * 11) - 5; // -5 ile 5 arasında
-                // Denklemi bu noktada hesapla
-                testY = a * testX * testX + b * testX + c;
-            } else {
-                // Denklemi sağlamayan bir nokta oluştur
-                testX = Math.floor(Math.random() * 11) - 5; // -5 ile 5 arasında
-                testY = a * testX * testX + b * testX + c + (Math.random() > 0.5 ? 1 : -1) * (Math.floor(Math.random() * 5) + 1);
-            }
-            
-            // Denklem bilgilerini döndür
-            return {
-                a: a,
-                b: b,
-                c: c,
-                vertexX: Number(vertexX.toFixed(2)),
-                vertexY: Number(vertexY.toFixed(2)),
-                testX: testX,
-                testY: Number(testY.toFixed(2)),
-                satisfiesEquation: satisfiesEquation,
-                direction: a > 0 ? 'up' : 'down' // a > 0 ise kollar yukarı, a < 0 ise kollar aşağı
-            };
-        }
-        
-        // Denklemi göster
-        function displayEquation(equation) {
-            let equationText = `f(x) = `;
-            
-            // ax² terimi
-            if (equation.a === 1) {
-                equationText += `x²`;
-            } else if (equation.a === -1) {
-                equationText += `-x²`;
-            } else {
-                equationText += `<span class="coefficient">${equation.a}</span>x²`;
-            }
-            
-            // bx terimi
-            if (equation.b > 0) {
-                equationText += ` + <span class="coefficient">${equation.b}</span>x`;
-            } else if (equation.b < 0) {
-                equationText += ` - <span class="coefficient">${Math.abs(equation.b)}</span>x`;
-            }
-            
-            // c terimi
-            if (equation.c > 0) {
-                equationText += ` + <span class="coefficient">${equation.c}</span>`;
-            } else if (equation.c < 0) {
-                equationText += ` - <span class="coefficient">${Math.abs(equation.c)}</span>`;
-            }
-            
-            equationElement.innerHTML = equationText;
-            
-            // Test noktası sorusunu güncelle
-            pointQuestionElement.innerHTML = `Nokta (${equation.testX}, ${equation.testY}) bu denklemi sağlıyor mu?`;
-        }
-        
-        // Tepe noktası kontrolü
-        function checkVertex() {
-            const userX = parseFloat(vertexXInput.value);
-            const userY = parseFloat(vertexYInput.value);
-            
-            if (isNaN(userX) || isNaN(userY)) {
-                vertexMessageElement.textContent = 'Lütfen her iki koordinatı da girin!';
-                vertexMessageElement.className = 'message incorrect';
-                return;
-            }
-            
-            // Yaklaşık doğruluk kontrolü (0.1 hassasiyetle)
-            const xCorrect = Math.abs(userX - currentEquation.vertexX) < 0.11;
-            const yCorrect = Math.abs(userY - currentEquation.vertexY) < 0.11;
-            
-            if (xCorrect && yCorrect) {
-                vertexMessageElement.innerHTML = `Doğru! Tepe noktası (${currentEquation.vertexX}, ${currentEquation.vertexY})`;
-                vertexMessageElement.className = 'message correct';
-                score += 10;
-                scoreElement.textContent = score;
-                
-                // Aşama 2'ye geç
-                setTimeout(() => {
-                    stage1Element.classList.add('hidden');
-                    stage2Element.classList.remove('hidden');
-                }, 1500);
-            } else {
-                vertexMessageElement.innerHTML = `Yanlış! Doğru cevap: (${currentEquation.vertexX}, ${currentEquation.vertexY})`;
-                vertexMessageElement.className = 'message incorrect';
-                
-                // Oyun sona erer
-                endGame(`Tepe noktasını yanlış buldunuz! Doğru cevap: (${currentEquation.vertexX}, ${currentEquation.vertexY}). Oyun bitti.`);
-            }
-        }
-        
-        // Nokta kontrolü
-        function checkPoint(userAnswer) {
-            const correctAnswer = currentEquation.satisfiesEquation;
-            
-            if (userAnswer === correctAnswer) {
-                pointMessageElement.textContent = correctAnswer ? 
-                    'Doğru! Bu nokta denklemi sağlıyor.' : 
-                    'Doğru! Bu nokta denklemi sağlamıyor.';
-                pointMessageElement.className = 'message correct';
-                score += 10;
-                scoreElement.textContent = score;
-                
-                // Aşama 3'e geç
-                setTimeout(() => {
-                    stage2Element.classList.add('hidden');
-                    stage3Element.classList.remove('hidden');
-                }, 1500);
-            } else {
-                pointMessageElement.textContent = correctAnswer ? 
-                    'Yanlış! Bu nokta denklemi sağlıyor.' : 
-                    'Yanlış! Bu nokta denklemi sağlamıyor.';
-                pointMessageElement.className = 'message incorrect';
-                
-                // Puan düş
-                score -= 20;
-                scoreElement.textContent = score;
-            }
-        }
-        
-        // Yön kontrolü
-        function checkDirection(userDirection) {
-            const correctDirection = currentEquation.direction;
-            
-            if (userDirection === correctDirection) {
-                directionMessageElement.textContent = correctDirection === 'up' ? 
-                    'Doğru! Parabolün kolları yukarı bakıyor.' : 
-                    'Doğru! Parabolün kolları aşağı bakıyor.';
-                directionMessageElement.className = 'message correct';
-                score += 10;
-                scoreElement.textContent = score;
-                
-                // Oyunu başarıyla bitir
-                setTimeout(() => {
-                    endGame(`Tebrikler! Tüm aşamaları başarıyla tamamladınız. Toplam puanınız: ${score}`);
-                }, 1500);
-            } else {
-                directionMessageElement.textContent = correctDirection === 'up' ? 
-                    'Yanlış! Parabolün kolları yukarı bakıyor.' : 
-                    'Yanlış! Parabolün kolları aşağı bakıyor.';
-                directionMessageElement.className = 'message incorrect';
-                
-                // Puan düş ve oyunu bitir
-                score -= 10;
-                scoreElement.textContent = score;
-                
-                setTimeout(() => {
-                    endGame(`Parabolün yönünü yanlış belirlediniz! Oyun bitti. Toplam puanınız: ${score}`);
-                }, 1500);
-            }
-        }
-        
-        // Oyunu bitir
-        function endGame(message) {
-            stage1Element.classList.add('hidden');
-            stage2Element.classList.add('hidden');
-            stage3Element.classList.add('hidden');
-            
-            gameOverElement.textContent = message;
-            gameOverElement.classList.remove('hidden');
-            newGameBtnElement.classList.remove('hidden');
-        }
-        
-        // Yeni oyun başlat
-        function startNewGame() {
-            score = 0;
-            scoreElement.textContent = score;
-            
-            currentEquation = generateQuadraticEquation();
-            displayEquation(currentEquation);
-            
-            // Girişleri temizle
-            vertexXInput.value = '';
-            vertexYInput.value = '';
-            vertexMessageElement.textContent = '';
-            pointMessageElement.textContent = '';
-            directionMessageElement.textContent = '';
-            
-            // Aşamaları ayarla
-            stage1Element.classList.remove('hidden');
-            stage2Element.classList.add('hidden');
-            stage3Element.classList.add('hidden');
-            gameOverElement.classList.add('hidden');
-            newGameBtnElement.classList.add('hidden');
-            
-            // Grafiği çiz
-            drawGraph();
-        }
-        
-        // Grafiği çiz
-        function drawGraph() {
-            // Canvas oluştur
-            graphElement.innerHTML = '';
-            const canvas = document.createElement('canvas');
-            canvas.width = graphElement.clientWidth;
-            canvas.height = graphElement.clientHeight;
-            graphElement.appendChild(canvas);
-            
-            const ctx = canvas.getContext('2d');
-            const width = canvas.width;
-            const height = canvas.height;
-            
-            // Koordinat sistemi çiz
-            ctx.clearRect(0, 0, width, height);
-            ctx.strokeStyle = '#ccc';
-            ctx.lineWidth = 1;
-            
-            // x ekseni
-            ctx.beginPath();
-            ctx.moveTo(0, height/2);
-            ctx.lineTo(width, height/2);
-            ctx.stroke();
-            
-            // y ekseni
-            ctx.beginPath();
-            ctx.moveTo(width/2, 0);
-            ctx.lineTo(width/2, height);
-            ctx.stroke();
-            
-            // Parabolü çiz
-            ctx.strokeStyle = '#3498db';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            
-            const a = currentEquation.a;
-            const b = currentEquation.b;
-            const c = currentEquation.c;
-            
-            // Ölçekleme faktörleri
-            const scaleX = 20; // x-ekseni ölçeği
-            const scaleY = 20; // y-ekseni ölçeği
-            
-            // Grafiğin başlangıç ve bitiş değerleri
-            const startX = -10;
-            const endX = 10;
-            const step = 0.1;
-            
-            let isFirstPoint = true;
-            for (let x = startX; x <= endX; x += step) {
-                const y = a * x * x + b * x + c;
-                
-                // Ekran koordinatlarına dönüştür
-                const screenX = (x * scaleX) + width/2;
-                const screenY = height/2 - (y * scaleY);
-                
-                if (isFirstPoint) {
-                    ctx.moveTo(screenX, screenY);
-                    isFirstPoint = false;
-                } else {
-                    ctx.lineTo(screenX, screenY);
-                }
-            }
-            ctx.stroke();
-            
-            // Tepe noktasını işaretle
-            ctx.fillStyle = '#e74c3c';
-            const vertexScreenX = (currentEquation.vertexX * scaleX) + width/2;
-            const vertexScreenY = height/2 - (currentEquation.vertexY * scaleY);
-            ctx.beginPath();
-            ctx.arc(vertexScreenX, vertexScreenY, 5, 0, Math.PI * 2);
-            ctx.fill();
-            
-            // Test noktasını işaretle
-            ctx.fillStyle = '#2ecc71';
-            const testScreenX = (currentEquation.testX * scaleX) + width/2;
-            const testScreenY = height/2 - (currentEquation.testY * scaleY);
-            ctx.beginPath();
-            ctx.arc(testScreenX, testScreenY, 5, 0, Math.PI * 2);
-            ctx.fill();
-        }
-        
-        // Olay dinleyicileri
-        checkVertexBtn.addEventListener('click', checkVertex);
-        yesBtnElement.addEventListener('click', () => checkPoint(true));
-        noBtnElement.addEventListener('click', () => checkPoint(false));
-        upBtnElement.addEventListener('click', () => checkDirection('up'));
-        downBtnElement.addEventListener('click', () => checkDirection('down'));
-        newGameBtnElement.addEventListener('click', startNewGame);
-        
-        // Enter tuşu olayları
-        vertexXInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                vertexYInput.focus();
-            }
-        });
-        
-        vertexYInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                checkVertex();
-            }
-        });
-        
-        // Pencere boyutu değiştiğinde grafiği yeniden çiz
-        window.addEventListener('resize', drawGraph);
-        
-        // Oyunu başlat
-        startNewGame();
-    </script>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="col-12 col-md-12">
+                    <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2">
+                        <strong>Join our community.</strong>
+                    </h5>
+                    <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">
+                        With a spirit of innovation, we navigate uncharted territories, exploring new ideas,
+                        technologies, and approaches.</h6>
+                    
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div id="bootstrap-accordion_5" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse1_5" aria-expanded="false" aria-controls="collapse1">
+                                <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
+                                    How much does delivery cost?
+                                </h6>
+                                <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                            </a>
+                        </div>
+                        <div id="collapse1_5" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_5">
+                            <div class="panel-body">
+                                <p class="mbr-fonts-style panel-text display-7">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum
+                                    laoreet tincidunt. Proin et sapien scelerisque, ornare lectus eget, iaculis
+                                    lectus. Pellentesque viverra molestie tortor. Nunc sed interdum est, in maximus
+                                    diam. Donec eu tellus dictum, gravida velit et, sagittis arcu. Proin et lectus
+                                    dapibus. Cras fringilla elit velit placerat tortor mollis cursus.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse2_5" aria-expanded="false" aria-controls="collapse2">
+                                <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
+                                    What is the estimated delivery time?
+                                </h6>
+                                <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                            </a>
+                        </div>
+                        <div id="collapse2_5" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_5">
+                            <div class="panel-body">
+                                <p class="mbr-fonts-style panel-text display-7">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum
+                                    laoreet tincidunt. Proin et sapien scelerisque, ornare lectus eget, iaculis
+                                    lectus. Pellentesque viverra molestie tortor. Nunc sed interdum est, in maximus
+                                    diam. Donec eu tellus dictum, gravida velit et, sagittis arcu. Proin et lectus
+                                    dapibus. Cras fringilla elit velit placerat tortor mollis cursus.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse3_5" aria-expanded="false" aria-controls="collapse3">
+                                <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
+                                    Do you offer same-day delivery?
+                                </h6>
+                                <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                            </a>
+                        </div>
+                        <div id="collapse3_5" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_5">
+                            <div class="panel-body">
+                                <p class="mbr-fonts-style panel-text display-7">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum
+                                    laoreet tincidunt. Proin et sapien scelerisque, ornare lectus eget, iaculis
+                                    lectus. Pellentesque viverra molestie tortor. Nunc sed interdum est, in maximus
+                                    diam. Donec eu tellus dictum, gravida velit et, sagittis arcu. Proin et lectus
+                                    dapibus. Cras fringilla elit velit placerat tortor mollis cursus.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse4_5" aria-expanded="false" aria-controls="collapse4">
+                                <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
+                                    Can I track my delivery order?
+                                </h6>
+                                <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                            </a>
+                        </div>
+                        <div id="collapse4_5" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_5">
+                            <div class="panel-body">
+                                <p class="mbr-fonts-style panel-text display-7">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum
+                                    laoreet tincidunt. Proin et sapien scelerisque, ornare lectus eget, iaculis
+                                    lectus. Pellentesque viverra molestie tortor. Nunc sed interdum est, in maximus
+                                    diam. Donec eu tellus dictum, gravida velit et, sagittis arcu. Proin et lectus
+                                    dapibus. Cras fringilla elit velit placerat tortor mollis cursus.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-maker.html">Best AI Website Maker</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/parallax/jarallax.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/countdown/countdown.js"></script>  <script src="assets/theme/js/script.js"></script>  <script src="assets/formoid/formoid.min.js"></script>  
+  
+  
 </body>
 </html>
